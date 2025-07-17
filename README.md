@@ -10,4 +10,4 @@ The technologies used for this project are given viz:
 - Pytorch Library
 - Flask web framework
 - HTML, CSS and JavaScript
-- [] Docker
+- Docker (for containerization)
