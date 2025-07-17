@@ -1,5 +1,5 @@
 from app import app
-from flask import render_template
+from flask import render_template, request
 
 @app.route("/")
 @app.route("/home-page", methods=["GET", "POST"])
@@ -7,8 +7,8 @@ def home():
     if (request.method == "GET"):
         return render_template("home.html")
 
-    if (request.method == "POST"):
-        image = request.file["image"]
+    if (request.method == "POST" and request.files):
+        image = request.files["image"]
         // perform transformation on image
         // load model
         // use image on the model and store the output
