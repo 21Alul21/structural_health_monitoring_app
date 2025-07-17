@@ -9,12 +9,37 @@
 <body>
     <div class="container">
         <h1>AI Health Monitoring Application</h1>
-         <h2>As a final year project</h2>
 
-        <form id="uploadForm" enctype="multipart/form-data">
-            <input type="file" id="imageInput" name="image" accept="image/*">
-            <button type="submit">Upload Image</button>
+        <form id="uploadForm" action="/home" method="POST" enctype="multipart/form-data">
+            <input type="file" id="imageInput" name="image" accept="image/*" required>
+            <div id="imagePreviewContainer">
+                <img id="imagePreview" src="#" alt="Selected image will appear here" style="display: none;">
+            </div>
+            <button type="submit" id="uploadBtn">Upload Image</button>
+            <button type="submit" id="healthCheckBtn" name="action" value="health-check">Health Check</button>
         </form>
     </div>
+
+    <script>
+        const imageInput = document.getElementById("imageInput");
+        const imagePreview = document.getElementById("imagePreview");
+
+        imageInput.addEventListener("change", function () {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    imagePreview.setAttribute("src", e.target.result);
+                    imagePreview.style.display = "block";
+                };
+
+                reader.readAsDataURL(file);
+            } else {
+                imagePreview.setAttribute("src", "#");
+                imagePreview.style.display = "none";
+            }
+        });
+    </script>
 </body>
 </html>
