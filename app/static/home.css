@@ -8,7 +8,7 @@
 /* Base Theme */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #fffaf0; /* light yellowish background */
+    background-color: #fffaf0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -17,8 +17,8 @@ body {
 }
 
 .container {
-    background-color: #5c4033; /* brown */
-    color: #fff8dc; /* light yellow text */
+    background-color: #5c4033;
+    color: #fff8dc;
     padding: 40px 30px;
     border-radius: 12px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.2);
@@ -27,14 +27,12 @@ body {
     text-align: center;
 }
 
-/* Heading */
 h1 {
     font-size: 1.8em;
     margin-bottom: 30px;
-    color: #f5deb3; /* wheat (light yellow) */
+    color: #f5deb3;
 }
 
-/* File Input */
 input[type="file"] {
     margin-bottom: 20px;
     display: block;
@@ -42,29 +40,40 @@ input[type="file"] {
     background-color: #fff8dc;
     padding: 10px;
     border-radius: 5px;
-    border: 2px solid #d2b48c; /* tan */
+    border: 2px solid #d2b48c;
     color: #5c4033;
     font-weight: bold;
 }
 
-/* Button */
+#imagePreviewContainer {
+    margin-bottom: 20px;
+}
+
+#imagePreview {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid #deb887;
+    margin-top: 10px;
+}
+
 button {
-    background-color: #d2b48c; /* tan / light brown */
-    color: #5c4033; /* dark brown */
+    background-color: #d2b48c;
+    color: #5c4033;
     padding: 12px 25px;
     border: none;
     border-radius: 6px;
     font-size: 1em;
     cursor: pointer;
     font-weight: bold;
+    margin: 10px 5px 0;
     transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #deb887; /* burlywood */
+    background-color: #deb887;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .container {
         padding: 30px 20px;
@@ -76,6 +85,7 @@ button:hover {
 
     button {
         width: 100%;
+        margin-top: 10px;
     }
 
     input[type="file"] {
