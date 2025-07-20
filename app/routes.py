@@ -1,20 +1,23 @@
-from app import app
+#from app import app
 from flask import render_template, request
-import torch
-from torchvision import transforms
-from PIL import Image
+#import torch
+#from torchvision import transforms
+#from PIL import Image
+
+from flask import Flask
+app = Flask(__name__)
 
 # Load the model
-MODEL_PATH = "model.pth"
-model = torch.load(MODEL_PATH, map_location=torch.device("cpu"))
-model.eval()
+# MODEL_PATH = "model.pth"
+# model = torch.load(MODEL_PATH, map_location=torch.device("cpu"))
+# model.eval()
 
 # Define image transformation
-transform = transforms.Compose([
-    transforms.Resize((224, 224)),
-    transforms.ToTensor(),
-    transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])
-])
+# transform = transforms.Compose([
+#     transforms.Resize((224, 224)),
+#     transforms.ToTensor(),
+#     transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])
+# ])
 
 @app.route("/")
 @app.route("/home-page", methods=["GET", "POST"])
@@ -45,3 +48,8 @@ def home():
         output = None
 
     return render_template("home.html", output=output)
+
+
+
+if (__name__ == "__main__"):
+    app.run("debug" == True)

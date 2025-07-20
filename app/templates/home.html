@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>AI Health Monitoring Application</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="/static/home.css">
 </head>
 <body>
     <div class="container">
@@ -19,7 +19,7 @@
 {% endif %}
 
 
-        <form id="uploadForm" action="/home" method="POST" enctype="multipart/form-data">
+        <form id="uploadForm" action="/home-page" method="POST" enctype="multipart/form-data">
             <input type="file" id="imageInput" name="image" accept="image/*" required>
             <div id="imagePreviewContainer">
                 <img id="imagePreview" src="#" alt="Selected image will appear here" style="display: none;">
